@@ -1,0 +1,30 @@
+﻿@model WebUI.Models.YorumUpdateViewModel
+@{
+    ViewData["Title"] = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<form class="form-group" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="BlogId" />
+
+    <div class="form-group">
+        <label>Kullanıcı</label>
+        <input type="text" class="form-control" asp-for="KullaniciAdi" />
+    </div>
+    <div class="form-group">
+        <label>Mail</label>
+        <input type="text" class="form-control" asp-for="Mail" />
+    </div>
+    <div class="form-group">
+        <label>Yorum</label>
+        <textarea class="form-control" asp-for="Yorumm"></textarea>
+        <span asp-validation-for="Yorumm" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Yorumu Güncelle</button>
+</form>
+
+
+

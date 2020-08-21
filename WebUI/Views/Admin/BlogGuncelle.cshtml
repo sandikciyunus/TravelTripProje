@@ -1,0 +1,31 @@
+﻿@model WebUI.Models.BlogUpdateViewModel
+@{
+    ViewData["Title"] = "BlogGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<form class="form-group" method="post">
+    <input type="hidden" asp-for="Id"/>
+    <div class="form-group">
+        <label>Başlık</label>
+        <input type="text" class="form-control" asp-for="Baslik" />
+        <span asp-validation-for="Baslik" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Açıklama</label>
+        <textarea class="form-control" asp-for="Aciklama"></textarea>
+        <span asp-validation-for="Aciklama" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Blog Resmi</label>
+        <input type="text" class="form-control" asp-for="BlogImage" />
+        <span asp-validation-for="BlogImage" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Blog Güncelle</button>
+</form>
+
+
+

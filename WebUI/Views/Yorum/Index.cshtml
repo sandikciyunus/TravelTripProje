@@ -1,0 +1,34 @@
+﻿@model WebUI.Models.YorumListViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Kullanıcı</th>
+        <th>Mail</th>
+        <th>Yorum</th>
+        <th>Blog</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach(var yorum in Model.Yorums)
+        {
+        <tr>
+            <td>@yorum.KullaniciAdi</td>
+            <td>@yorum.Mail</td>
+            <td>@yorum.Yorumm</td>
+            <td>@yorum.Blog.Baslik</td>
+            <td>
+                <a asp-controller="Yorum" asp-action="Sil" asp-route-id="@yorum.Id" class="btn btn-danger">Sil</a>
+            </td>
+            <td>
+                <a asp-controller="Yorum" asp-action="Guncelle" asp-route-id="@yorum.Id" class="btn btn-warning">Güncelle</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

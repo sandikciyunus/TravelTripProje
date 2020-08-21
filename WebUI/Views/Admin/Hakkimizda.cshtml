@@ -1,0 +1,26 @@
+﻿@model WebUI.Models.HakkimizdaListViewModel
+@{
+    ViewData["Title"] = "Hakkimizda";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Açıklama</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach(var hakkimizda in Model.Hakkimizdas)
+        {
+            <tr>
+                <td>@hakkimizda.Aciklama</td>
+                <td>
+                    <a asp-controller="Admin" asp-action="HakkimizdaGuncelle" asp-route-id="@hakkimizda.Id" class="btn btn-warning">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,31 @@
+﻿@model WebUI.Models.BlogListViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Başlık</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach(var blog in Model.Blogs)
+        {
+        <tr>
+            <td>@blog.Baslik</td>
+            <td>@blog.Tarih.ToString("D")</td>
+            <td>
+                <a asp-controller="Admin" asp-action="BlogSil" asp-route-id="@blog.Id" class="btn btn-danger">Sil</a>
+            </td>
+            <td>
+                <a asp-controller="Admin" asp-action="BlogGuncelle" asp-route-id="@blog.Id" class="btn btn-warning">Güncelle</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Admin" asp-action="YeniBlog" class="btn btn-primary">Yeni Blog Yaz</a>
+

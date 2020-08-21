@@ -1,0 +1,32 @@
+﻿@model WebUI.Models.HakkimizdaListViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TripLayout.cshtml";
+}
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <div class="content">
+        <div class="wrap">
+            <div class="about">
+                <h3>Hakkımızda</h3>
+                @foreach (var hakkimizda in Model.Hakkimizdas)
+                {
+                    <img src="@hakkimizda.FotoUrl" alt="" />
+                    <p>@hakkimizda.Aciklama</p>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

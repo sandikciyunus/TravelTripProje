@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<title>Tatil Seyahat Sitesi Admin Paneli</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="~/w3/w3.css" rel="stylesheet" />
+@*<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">*@
+<link href="~/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+        <h3 class="w3-bar-item">Menüler</h3>
+        <a asp-controller="Admin" asp-action="Index" class="w3-bar-item w3-button">Bloglar</a>
+        <a asp-controller="Yorum" asp-action="Index" class="w3-bar-item w3-button">Yorumlar</a>
+        <a asp-controller="Admin" asp-action="Hakkimizda" class="w3-bar-item w3-button">Hakkımızda</a>
+        <a asp-controller="Admin" asp-action="Iletisim" class="w3-bar-item w3-button">İletişim</a>
+        <a asp-controller="Default" asp-action="Index" class="w3-bar-item w3-button">Siteye Git</a>
+        <a asp-controller="Admin" asp-action="LogOut" class="w3-bar-item w3-button">Çıkış Yap</a>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:15%">
+
+        <div class="w3-container w3-teal">
+            <h1>Admin Yönetim Paneli</h1>
+        </div>
+
+
+
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+
+    </div>
+
+</body>
+</html>
